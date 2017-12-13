@@ -55,14 +55,34 @@ class PostsController extends Controller
             'body' => 'required|min:2'
         ]);
 
-        /*Create a Post option*/ /*Understandable*/ /*DON'T FORGET THE $fillable ARRAY IN THE MODEL*/
+        /*option*/ /*Understandable*/ /*DON'T FORGET THE $fillable ARRAY IN THE MODEL*/
         // $post = new Post;
         // $post->title = request('title');
         // $post->body = request('body');
         // $post->save();
 
-        /*Create a Post option*/ /*Better and Optimal*/
-        Post::create(request([ 'title', 'body']));
+        /*option*/ /*Better and Optimal*/
+        // Post::create(request([ 'title', 'body']));
+
+        /*Option*/ /*Custom and Long*/
+        // $post = new Post;
+        // $post->title = ucfirst(request('title'));
+        // $post->body = ucfirst(request('body'));
+        // $post->save();
+
+        /*Option*/ /*Custom with Eloquent*/
+        // Post::create([
+        //     'title' => ucfirst($request['title']),
+        //     'body' => ucfirst($request['body'])
+        // ]);
+
+        /*Option*/ /*Custom with Eloquent without the request variable*/
+        Post::create([
+            'title' => ucfirst(request('title')),
+            'body' => ucfirst(request('body'))
+        ]);
+
+
         return redirect('/posts');
     }
 

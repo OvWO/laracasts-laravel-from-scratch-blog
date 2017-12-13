@@ -12,13 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('posts.index');
+    return view('welcome');
 });
 
 
 Route::resource('posts', 'PostsController');
-// Route::resource('posts.comments', 'CommentsController', ['only' => ['store']]);
+Route::resource('posts.comments', 'CommentsController', ['only' => ['store']]);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('posts/{post}/comments', 'CommentsController@store');
