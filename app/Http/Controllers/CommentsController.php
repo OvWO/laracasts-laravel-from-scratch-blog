@@ -36,7 +36,10 @@ class CommentsController extends Controller
      */
     public function store(Post $post)
     {
-        // return $post;
+        // $post_id = $post->id;
+        // $user_id = auth()->id();
+        // $body = request('body');
+        // return compact('user_id','post_id', 'body');
 
         $this->validate(request(),[
            'body' => 'required|min:2'
@@ -50,12 +53,16 @@ class CommentsController extends Controller
         // ]);
 
         /*Option*/ /*Wtihout updating the Post Model*/
-        // $post->comments()->create([
-        //     'body' => ucfirst(request('body'))
-        // ]);
+        $post->comments()->create([
+            'body' => ucfirst(request('body')),
+            'post_id' => $post->id,
+            'user_id' => auth()->id()
+        ]);
+
+        // $post->addComment(compact('user_id','post_id', 'body'));
 
         /*Option*/ /*Short and Cleaner*/
-        $post->addComment(ucfirst(request('body')));
+        // $post->addComment(request['body', 'user_id']);
 
         return back();
     }

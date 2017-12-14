@@ -62,8 +62,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $message = 'Welcome';
+        session()->flash('message', $message); //send a message with username to a user via event listener.
         return User::create([
-            'name' => $data['name'],
+            'name' => ucfirst($data['name']),
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

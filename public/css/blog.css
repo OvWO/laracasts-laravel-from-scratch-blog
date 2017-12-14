@@ -29,6 +29,28 @@ h6,
   font-weight: 400;
   color: #333;
 }
+/*
+a:link {
+    text-decoration: none;
+    color: green;
+}
+*/
+
+/*a:visited {
+    text-decoration: none;
+    color: orange;
+}
+*/
+
+a:hover {
+    text-decoration: none;
+    /*color: red;*/
+}
+
+a:active {
+    text-decoration: none;
+    color:cyan;
+}
 
 
 /*
@@ -168,3 +190,4 @@ h6,
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+

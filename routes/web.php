@@ -12,16 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('posts');
 });
 
-
-Route::resource('posts', 'PostsController');
+// Route::get('/', 'PostsController@index')->name('home');
+Route::resource('posts', 'PostsController' );
 Route::resource('posts.comments', 'CommentsController', ['only' => ['store']]);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::get('posts/{post}/comments', 'CommentsController@store');
+Route::resource('posts/tags/{tag}', 'TagsController'); // Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('posts/{post}/comments', 'CommentsController@store');

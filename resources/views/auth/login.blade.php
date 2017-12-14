@@ -60,6 +60,7 @@
                                 </a>
                             </div>
                         </div>
+                        @include('partials.errors')
                     </form>
                 </div>
             </div>

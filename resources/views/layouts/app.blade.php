@@ -11,18 +11,25 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/blog.css') }}">
 </head>
 <body>
     <header>
         @include('layouts.nav')
+{{--
+        @if ($flash = session('message'))
+            <div class="alert alert-success" id="flash-message" role="alert">
+                {{ session('message') }}{{ $flash }}
+            </div>
+        @endif --}}
+
 
         <div class="blog-header">
         <div class="container">
-          <h1 class="blog-title">The Bootstrap Blog</h1>
-          <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+          <h1 class="blog-title">Playground</h1>
+          <p class="lead blog-description">An example blog app to test my skills</p>
         </div>
       </div>
     </header>
@@ -36,6 +43,6 @@
 
     @include('layouts.footer')
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
