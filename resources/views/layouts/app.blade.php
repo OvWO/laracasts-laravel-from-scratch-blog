@@ -28,8 +28,15 @@
 
         <div class="blog-header">
         <div class="container">
-          <h1 class="blog-title">Playground</h1>
-          <p class="lead blog-description">An example blog app to test my skills</p>
+
+                    <h1 class="blog-title">Playground</h1>
+                    <p class="lead blog-description">An example blog app to test my skills</p>
+
+
+                    @if(Route::currentRouteName() != 'posts.create')
+                     <a href="{{ route('posts.create') }}" class="btn btn-primary" role="button" >Create a post</a>
+                    @endif
+            </div>
         </div>
       </div>
     </header>

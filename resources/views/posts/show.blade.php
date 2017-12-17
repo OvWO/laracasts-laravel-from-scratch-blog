@@ -5,21 +5,18 @@
     <h1>{{ $post->title }}</h1>
 
     @if(count($post->tags))
-        <ul>
+        <ul class="list-unstyled">
             @foreach($post->tags as $tag)
                 <li>
-                    <a href="/posts/tags/{{ $tag->name }}">
+                    <a href="/posts/tags/{{ $tag->name }}" class="badge badge-secondary">
                         {{ $tag->name }}
                     </a>
                 </li>
             @endforeach
         </ul>
     @endif
-
     {{ $post->body }}
     <hr>
-
-
     <div class="comments">
         <ul class="list-group">
             @foreach($post->comments as $comment)
@@ -35,6 +32,7 @@
     <hr>
     <div class="card">
         <div class="card-block">
+            @if(Auth::check())
             <form method="POST" action="/posts/{{ $post->id }}/comments">
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -47,8 +45,12 @@
                 </div>
                 @include('partials.errors')
             </form>
+            @else
+                <div class="form-group">
+                    <h5>You must <a href="{{ route('login') }}">login</a> to post a comment</h5>
+                </div>
+            @endif
         </div>
     </div>
-
   </div><!-- /.blog-main -->
 @endsection

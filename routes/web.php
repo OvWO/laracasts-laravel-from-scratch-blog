@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () {//abort(404, 'The resource you are looking for could not be found');
+
     return redirect('posts');
 });
 
