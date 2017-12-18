@@ -33,7 +33,7 @@
                     <p class="lead blog-description">An example blog app to test my skills</p>
 
 
-                    @if(Route::currentRouteName() != 'posts.create')
+                    @if(Route::currentRouteName() != 'posts.create' && Auth::check())
                      <a href="{{ route('posts.create') }}" class="btn btn-primary" role="button" >Create a post</a>
                     @endif
             </div>
