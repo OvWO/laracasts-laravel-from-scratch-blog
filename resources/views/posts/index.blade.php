@@ -7,7 +7,7 @@
             @include('posts.post')
           @endforeach
 
-          {{-- {{ $posts->links() }} --}}
+          {{ $posts->links() }}
 
           <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>

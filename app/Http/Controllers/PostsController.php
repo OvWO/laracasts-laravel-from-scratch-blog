@@ -16,6 +16,7 @@ class PostsController extends Controller
             'index',
             'show'
         ]);
+
     }
 
     /**
