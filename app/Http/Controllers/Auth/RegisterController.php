@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
+use App\Notifications\SendActivationEmail;
+use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -64,10 +65,14 @@ class RegisterController extends Controller
     {
         $message = 'Welcome';
         session()->flash('message', $message); //send a message with username to a user via event listener.
-        return User::create([
+        $user = User::create([
             'name' => ucfirst($data['name']),
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'token' => str_random(25),
         ]);
+        $user->notify(new SendActivationEmail($user->token));
+
+        return $user;
     }
 }
