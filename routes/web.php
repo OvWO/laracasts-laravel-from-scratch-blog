@@ -22,23 +22,31 @@ Route::group(['middleware' => ['web',]], function () {
     // Activation Routes
     Route::get('/activate', ['as' => 'activate', 'uses' => 'ActivateController@initial']);
 
-    Route::get('/activate/{token}', ['as' => 'authenticated.activate', 'uses' => 'ActivateController@activate']);
+    Route::get('/activate/{token}', ['as' => 'authenticated.activate', 'uses' => 'ActivateController@verify']);
     Route::get('/activation', ['as' => 'authenticated.activation-resend', 'uses' => 'ActivateController@resend']);
     Route::get('/exceeded', ['as' => 'exceeded', 'uses' => 'ActivateController@exceeded']);
 });
 
 
+Route::get('profile', 'UserController@profile');
+Route::post('profile', 'UserController@update_avatar');
 
 
 Route::get('/home', function() {
         return redirect('posts');
     });
-
+// Route::resource('posts/tags/{tag}', 'TagsController');
 Route::resource('posts', 'PostsController' );
 Route::resource('posts.comments', 'CommentsController', ['only' => ['store']]);
 
 Auth::routes();
 
-Route::resource('posts/tags/{tag}', 'TagsController');
+Route::get('/hola', function() {
+    $img = \App\User::findOrFail(1)->avatar;
+    dump($img);
+    return view('welcome', compact('img'));
+});
+
+
 
 // Route::get('posts/{post}/comments', 'CommentsController@store');
