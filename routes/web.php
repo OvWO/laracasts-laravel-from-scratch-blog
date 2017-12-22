@@ -27,7 +27,7 @@ Route::group(['middleware' => ['web',]], function () {
     Route::get('/exceeded', ['as' => 'exceeded', 'uses' => 'ActivateController@exceeded']);
 });
 
-
+Route::resource('profile', 'UserController' );
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 
@@ -36,14 +36,14 @@ Route::get('/home', function() {
         return redirect('posts');
     });
 // Route::resource('posts/tags/{tag}', 'TagsController');
-Route::resource('posts', 'PostsController' );
+Route::get('/posts', 'PostsController@index')->name('posts');
+Route::resource('posts', 'PostsController', ['except' => ['index']] );
 Route::resource('posts.comments', 'CommentsController', ['only' => ['store']]);
 
 Auth::routes();
 
 Route::get('/hola', function() {
-    $img = \App\User::findOrFail(1)->avatar;
-    dump($img);
+    $img = \App\User::findOrFail(5)->avatar;
     return view('welcome', compact('img'));
 });
 

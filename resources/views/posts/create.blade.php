@@ -17,12 +17,6 @@
         <textarea type="text" class="form-control" id="body" name="body" required></textarea>
       </div>
 
-{{--       <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input">
-          Check me out
-        </label>
-      </div> --}}
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Publish</button>
       </div>
