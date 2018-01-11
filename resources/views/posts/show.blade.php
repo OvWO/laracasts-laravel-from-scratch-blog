@@ -21,7 +21,7 @@
         <ul class="list-group">
             @foreach($post->comments as $comment)
                 <strong>
-                    <p>{{ $comment->created_at->diffForHumans() }} &nbsp;<a href="/profile/{{ $post->user->id }}">by {{ $comment->user->name }} <img src="{{ $post->user->avatar }}" style="width:32px; height:32px; position:static; top:10px; left:10px; border-radius:50%"></a></p>
+                    <p>{{ $comment->created_at->diffForHumans() }} &nbsp;<a href="/profile/{{ $comment->user_id }}">by {{ $comment->user->name }} <img src="/uploads/avatars/{{ $comment->user->avatar }}" style="width:32px; height:32px; position:static; top:10px; left:10px; border-radius:50%"></a></p>
                 </strong>
                 <li class="list-group-item">
                     {{ $comment->body }}
