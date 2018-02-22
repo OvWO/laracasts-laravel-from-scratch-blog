@@ -1,7 +1,7 @@
 <?php
 /*Dependency injection(everywhere), constructor(if a injected class needs another class it will call it) injection and method injection(route-model binding example) are passing arguments and Laravel will figure out the class via reflection*/
 namespace App\Http\Controllers;
-
+/*A comment*/
 use App\Post;
 use App\Repositories\PostsRepository;
 use App\Tag;
