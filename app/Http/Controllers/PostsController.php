@@ -151,7 +151,8 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
-        //
+        // $post = Post::find($post->id);
+        // return view('posts.edit', compact('post'));
     }
 
     public function update(Request $request, Post $post)
