@@ -29,7 +29,7 @@
         <div class="blog-header">
         <div class="container">
 
-                    <h1 class="blog-title">Playground</h1>
+                    <h1 class="blog-title" style="font-size: 3rem">Playground</h1>
                     <p class="lead blog-description">An example blog app to put in practice my skills</p>
 
 
