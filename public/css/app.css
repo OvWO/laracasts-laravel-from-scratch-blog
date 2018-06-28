@@ -3,8 +3,8 @@
   position: absolute;
   right: 20px;
   z-index: 10;
-  -webkit-animation: flash-message 6s forwards;
-          animation: flash-message 6s forwards;
+  -webkit-animation: flash-message 4s forwards;
+          animation: flash-message 4s forwards;
 }
 
 @-webkit-keyframes flash-message {

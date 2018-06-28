@@ -50,3 +50,7 @@ Route::get('/hola', function() {
 
 
 // Route::get('posts/{post}/comments', 'CommentsController@store');
+
+Route::get('/note', function() {
+        return view('note');
+    })->name('note');

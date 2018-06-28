@@ -2,7 +2,7 @@
   <div class="container">
     <nav class="nav">
       <a class="nav-link active" href="{{ route('posts') }}">Posts</a>
-      <a class="nav-link" href="#">Press</a>
+      <a class="nav-link" href="{{ route('note') }}">NOTE</a>
 
 
         @guest
