@@ -17,8 +17,11 @@
     @endif
     {{ $post->body }}
     <hr>
-      <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
-    <hr>
+    @if(Auth::check() and Auth::user()->id == $post->user_id)
+         <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
+         <hr>
+    @endif
+
     <div class="comments">
         <ul class="list-group">
             @foreach($post->comments as $comment)

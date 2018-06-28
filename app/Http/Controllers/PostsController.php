@@ -136,7 +136,8 @@ class PostsController extends Controller
 
         // session()->flash('message', 'New post published successfully');
 
-        return redirect('/posts');
+        return redirect('/posts')
+            ->with('message', 'New post published successfully');
     }
 
 
@@ -151,6 +152,7 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
+        return json_encode('Not working');
         // $post = Post::find($post->id);
         // return view('posts.edit', compact('post'));
     }

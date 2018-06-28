@@ -1,6 +1,6 @@
 #flash-message {
   bottom: 20px;
-  position: absolute;
+  position: fixed;
   right: 20px;
   z-index: 10;
   -webkit-animation: flash-message 4s forwards;
@@ -29,7 +29,9 @@
   }
 }
 
-ul.black {
-  color: #fff;
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
 }
 

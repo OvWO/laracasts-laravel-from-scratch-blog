@@ -19,6 +19,7 @@
       <li>Pagination that works with bootstrap template</li>
       <li>Add comments with Vuejs as in this <a href="https://github.com/DevMarketer/Laravel_Echo_Tutorial">Github repo</a></li>
       <li>Facebook and Google login with Socialite Laravel Package</li>
+      <li>Add an Edit page</li>
   </ul>
 </div><!-- /.blog-post -->
 

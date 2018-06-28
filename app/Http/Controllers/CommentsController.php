@@ -64,7 +64,8 @@ class CommentsController extends Controller
         /*Option*/ /*Short and Cleaner*/
         // $post->addComment(request['body', 'user_id']);
 
-        return back();
+        return back()
+           ->with('message', 'Comment added succesfully');
     }
 
     /**
