@@ -18,12 +18,12 @@
 <body>
     <header>
         @include('layouts.nav')
-{{--
+
         @if ($flash = session('message'))
             <div class="alert alert-success" id="flash-message" role="alert">
                 {{ session('message') }}{{ $flash }}
             </div>
-        @endif --}}
+        @endif
 
 
         <div class="blog-header">
