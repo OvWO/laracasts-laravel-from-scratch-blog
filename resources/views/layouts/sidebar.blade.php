@@ -1,7 +1,7 @@
 <aside class="col-sm-3 ml-sm-auto blog-sidebar">
   <div class="sidebar-module sidebar-module-inset">
     <h4>About</h4>
-    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+    <p>This is a site that I did following <a href="https://laracasts.com/series/laravel-from-scratch-2017">Laracast's tutorial.</a></em> I also added some other features as described in the <a href="{{ route('note') }}">Note Page</a>  to keep improving my skills. You can also check the source code in <a href="">Github.</a></p>
   </div>
   <div class="sidebar-module">
     <h4>Archives</h4>

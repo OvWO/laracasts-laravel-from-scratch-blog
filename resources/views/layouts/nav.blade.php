@@ -2,7 +2,8 @@
   <div class="container">
     <nav class="nav">
       <a class="nav-link active" href="{{ route('posts') }}">Posts</a>
-      <a class="nav-link" href="{{ route('note') }}">NOTE</a>
+    <a class="nav-link" href="{{ route('note') }}" style="background-color: #000080
+;">NOTE{{-- {{ __('nav-header.title') }} --}}</a>
 
 
         @guest

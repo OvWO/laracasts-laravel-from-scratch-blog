@@ -21,7 +21,7 @@
 
         @if ($flash = session('message'))
             <div class="alert alert-success" id="flash-message" role="alert">
-                {{ session('message') }}{{ $flash }}
+                {{ session('message') }}{{-- {{ $flash }} --}}
             </div>
         @endif
 
@@ -30,7 +30,7 @@
         <div class="container">
 
                     <h1 class="blog-title">Playground</h1>
-                    <p class="lead blog-description">An example blog app to test my skills</p>
+                    <p class="lead blog-description">An example blog app to put in practice my skills</p>
 
 
                     @if(Route::currentRouteName() != 'posts.create' && Auth::check())
