@@ -19,7 +19,8 @@ class CheckIsUserActivated
     public function handle($request, Closure $next)
     {
         if(Auth::check() && Auth::user()->token != null){ // if user is logged in AND if user is unverified
-            dump('Verify your email');
+            // dump('Verify your email');
+            $request->session()->put( 'error', 'Please verify your email address' );
 
             // return redirect()->route('activation-required')
             //     ->with([

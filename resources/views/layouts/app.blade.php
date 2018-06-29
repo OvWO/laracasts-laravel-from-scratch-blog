@@ -24,7 +24,11 @@
                 {{ session('message') }}{{-- {{ $flash }} --}}
             </div>
         @endif
-
+        @if ($flash = session('error'))
+            <div class="alert alert-error" id="flash-message" role="alert">
+                {{ session('error') }}{{-- {{ $flash }} --}}
+            </div>
+        @endif
 
         <div class="blog-header">
         <div class="container">
