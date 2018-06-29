@@ -46,9 +46,9 @@ class SendActivationEmail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!')
+                    ->line('Welcome to the laracasts blog! Please click the button below to verify your e-mail address')
+                    ->action('Action', url('/'))
+                    ->line('Thank you!!')
                     ->action(trans('Activate'), route('authenticated.activate', ['token' => $this->token]));
     }
 
